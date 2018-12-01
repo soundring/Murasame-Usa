@@ -1,17 +1,6 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import {
-  TwitterTimelineEmbed,
-  TwitterShareButton,
-  TwitterFollowButton,
-  TwitterHashtagButton,
-  TwitterMentionButton,
-  TwitterTweetEmbed,
-  TwitterMomentShare,
-  TwitterDMButton,
-  TwitterVideoEmbed,
-  TwitterOnAirButton
-} from "react-twitter-embed";
+import { TwitterTimelineEmbed, TwitterFollowButton } from "react-twitter-embed";
 import styled from "styled-components";
 
 const ContactDiv = styled("div")`
