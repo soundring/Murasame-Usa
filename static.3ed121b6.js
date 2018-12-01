@@ -99,6 +99,151 @@ module.exports = require("prop-types");
 
 /***/ }),
 /* 4 */
+/***/ (function(module, exports) {
+
+module.exports = function(module) {
+	if(!module.webpackPolyfill) {
+		module.deprecate = function() {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if(!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(module) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.cacheProm = exports.loadFromPromiseCache = exports.cacheExport = exports.loadFromCache = exports.callForString = exports.createElement = exports.findExport = exports.resolveExport = exports.requireById = exports.tryRequire = exports.DefaultError = exports.DefaultLoading = exports.babelInterop = exports.isWebpack = exports.isServer = exports.isTest = undefined;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var isTest = exports.isTest = "production" === 'test';
+var isServer = exports.isServer = !(typeof window !== 'undefined' && window.document && window.document.createElement);
+
+var isWebpack = exports.isWebpack = function isWebpack() {
+  return typeof __webpack_require__ !== 'undefined';
+};
+var babelInterop = exports.babelInterop = function babelInterop(mod) {
+  return mod && (typeof mod === 'undefined' ? 'undefined' : _typeof(mod)) === 'object' && mod.__esModule ? mod.default : mod;
+};
+
+var DefaultLoading = exports.DefaultLoading = function DefaultLoading() {
+  return _react2.default.createElement(
+    'div',
+    null,
+    'Loading...'
+  );
+};
+var DefaultError = exports.DefaultError = function DefaultError(_ref) {
+  var error = _ref.error;
+  return _react2.default.createElement(
+    'div',
+    null,
+    'Error: ',
+    error && error.message
+  );
+};
+
+var tryRequire = exports.tryRequire = function tryRequire(id) {
+  try {
+    return requireById(id);
+  } catch (err) {
+    // warn if there was an error while requiring the chunk during development
+    // this can sometimes lead the server to render the loading component.
+    if (false) {
+      console.warn('chunk not available for synchronous require yet: ' + id + ': ' + err.message, err.stack);
+    }
+  }
+
+  return null;
+};
+
+var requireById = exports.requireById = function requireById(id) {
+  if (!isWebpack() && typeof id === 'string') {
+    return module.require(id);
+  }
+
+  return __webpack_require__(id);
+};
+
+var resolveExport = exports.resolveExport = function resolveExport(mod, key, onLoad, chunkName, props, context, modCache) {
+  var isSync = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : false;
+
+  var exp = findExport(mod, key);
+  if (onLoad && mod) {
+    var _isServer = typeof window === 'undefined';
+    var info = { isServer: _isServer, isSync: isSync };
+    onLoad(mod, info, props, context);
+  }
+  if (chunkName && exp) cacheExport(exp, chunkName, props, modCache);
+  return exp;
+};
+
+var findExport = exports.findExport = function findExport(mod, key) {
+  if (typeof key === 'function') {
+    return key(mod);
+  } else if (key === null) {
+    return mod;
+  }
+
+  return mod && (typeof mod === 'undefined' ? 'undefined' : _typeof(mod)) === 'object' && key ? mod[key] : babelInterop(mod);
+};
+
+var createElement = exports.createElement = function createElement(Component, props) {
+  return _react2.default.isValidElement(Component) ? _react2.default.cloneElement(Component, props) : _react2.default.createElement(Component, props);
+};
+
+var callForString = exports.callForString = function callForString(strFun, props) {
+  return typeof strFun === 'function' ? strFun(props) : strFun;
+};
+
+var loadFromCache = exports.loadFromCache = function loadFromCache(chunkName, props, modCache) {
+  return !isServer && modCache[callForString(chunkName, props)];
+};
+
+var cacheExport = exports.cacheExport = function cacheExport(exp, chunkName, props, modCache) {
+  return modCache[callForString(chunkName, props)] = exp;
+};
+
+var loadFromPromiseCache = exports.loadFromPromiseCache = function loadFromPromiseCache(chunkName, props, promisecache) {
+  return promisecache[callForString(chunkName, props)];
+};
+
+var cacheProm = exports.cacheProm = function cacheProm(pr, chunkName, props, promisecache) {
+  return promisecache[callForString(chunkName, props)] = pr;
+};
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -370,151 +515,6 @@ var Page = function (_React$Component) {
 exports.default = Page;
 
 /***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
-module.exports = function(module) {
-	if(!module.webpackPolyfill) {
-		module.deprecate = function() {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if(!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(module) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.cacheProm = exports.loadFromPromiseCache = exports.cacheExport = exports.loadFromCache = exports.callForString = exports.createElement = exports.findExport = exports.resolveExport = exports.requireById = exports.tryRequire = exports.DefaultError = exports.DefaultLoading = exports.babelInterop = exports.isWebpack = exports.isServer = exports.isTest = undefined;
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var isTest = exports.isTest = "production" === 'test';
-var isServer = exports.isServer = !(typeof window !== 'undefined' && window.document && window.document.createElement);
-
-var isWebpack = exports.isWebpack = function isWebpack() {
-  return typeof __webpack_require__ !== 'undefined';
-};
-var babelInterop = exports.babelInterop = function babelInterop(mod) {
-  return mod && (typeof mod === 'undefined' ? 'undefined' : _typeof(mod)) === 'object' && mod.__esModule ? mod.default : mod;
-};
-
-var DefaultLoading = exports.DefaultLoading = function DefaultLoading() {
-  return _react2.default.createElement(
-    'div',
-    null,
-    'Loading...'
-  );
-};
-var DefaultError = exports.DefaultError = function DefaultError(_ref) {
-  var error = _ref.error;
-  return _react2.default.createElement(
-    'div',
-    null,
-    'Error: ',
-    error && error.message
-  );
-};
-
-var tryRequire = exports.tryRequire = function tryRequire(id) {
-  try {
-    return requireById(id);
-  } catch (err) {
-    // warn if there was an error while requiring the chunk during development
-    // this can sometimes lead the server to render the loading component.
-    if (false) {
-      console.warn('chunk not available for synchronous require yet: ' + id + ': ' + err.message, err.stack);
-    }
-  }
-
-  return null;
-};
-
-var requireById = exports.requireById = function requireById(id) {
-  if (!isWebpack() && typeof id === 'string') {
-    return module.require(id);
-  }
-
-  return __webpack_require__(id);
-};
-
-var resolveExport = exports.resolveExport = function resolveExport(mod, key, onLoad, chunkName, props, context, modCache) {
-  var isSync = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : false;
-
-  var exp = findExport(mod, key);
-  if (onLoad && mod) {
-    var _isServer = typeof window === 'undefined';
-    var info = { isServer: _isServer, isSync: isSync };
-    onLoad(mod, info, props, context);
-  }
-  if (chunkName && exp) cacheExport(exp, chunkName, props, modCache);
-  return exp;
-};
-
-var findExport = exports.findExport = function findExport(mod, key) {
-  if (typeof key === 'function') {
-    return key(mod);
-  } else if (key === null) {
-    return mod;
-  }
-
-  return mod && (typeof mod === 'undefined' ? 'undefined' : _typeof(mod)) === 'object' && key ? mod[key] : babelInterop(mod);
-};
-
-var createElement = exports.createElement = function createElement(Component, props) {
-  return _react2.default.isValidElement(Component) ? _react2.default.cloneElement(Component, props) : _react2.default.createElement(Component, props);
-};
-
-var callForString = exports.callForString = function callForString(strFun, props) {
-  return typeof strFun === 'function' ? strFun(props) : strFun;
-};
-
-var loadFromCache = exports.loadFromCache = function loadFromCache(chunkName, props, modCache) {
-  return !isServer && modCache[callForString(chunkName, props)];
-};
-
-var cacheExport = exports.cacheExport = function cacheExport(exp, chunkName, props, modCache) {
-  return modCache[callForString(chunkName, props)] = exp;
-};
-
-var loadFromPromiseCache = exports.loadFromPromiseCache = function loadFromPromiseCache(chunkName, props, promisecache) {
-  return promisecache[callForString(chunkName, props)];
-};
-
-var cacheProm = exports.cacheProm = function cacheProm(pr, chunkName, props, promisecache) {
-  return promisecache[callForString(chunkName, props)] = pr;
-};
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
-
-/***/ }),
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -728,18 +728,6 @@ var _MuiThemeProvider = __webpack_require__(32);
 
 var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 
-var _Page = __webpack_require__(4);
-
-var _Page2 = _interopRequireDefault(_Page);
-
-var _About = __webpack_require__(33);
-
-var _About2 = _interopRequireDefault(_About);
-
-var _Home = __webpack_require__(34);
-
-var _Home2 = _interopRequireDefault(_Home);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
@@ -839,7 +827,7 @@ var t_0 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
   id: '../src/components/pages/Page',
   file: '/Users/otonari-yuki/murasame-intro/dist/react-static-routes.js',
   load: function load() {
-    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 4)), (0, _importCss3.default)('src/components/pages/Page', {
+    return Promise.all([new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 6)), (0, _importCss3.default)('src/components/pages/Page', {
       disableWarnings: true
     })]).then(function (proms) {
       return proms[0];
@@ -849,7 +837,7 @@ var t_0 = (0, _reactUniversalComponent2.default)((0, _universalImport3.default)(
     return _path3.default.join(__dirname, '../src/components/pages/Page');
   },
   resolve: function resolve() {
-    return /*require.resolve*/(4);
+    return /*require.resolve*/(6);
   },
   chunkName: function chunkName() {
     return 'src/components/pages/Page';
@@ -1073,7 +1061,7 @@ var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
 
 var _requireUniversalModule2 = _interopRequireDefault(_requireUniversalModule);
 
-var _utils = __webpack_require__(6);
+var _utils = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1364,7 +1352,7 @@ function universal(component) {
   }, _temp;
 }
 exports.default = universal;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ }),
 /* 20 */
@@ -1379,7 +1367,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.clearChunks = exports.flushModuleIds = exports.flushChunkNames = exports.MODULE_IDS = exports.CHUNK_NAMES = undefined;
 exports.default = requireUniversalModule;
 
-var _utils = __webpack_require__(6);
+var _utils = __webpack_require__(5);
 
 var CHUNK_NAMES = exports.CHUNK_NAMES = new Set();
 var MODULE_IDS = exports.MODULE_IDS = new Set();
@@ -1809,81 +1797,7 @@ module.exports = require("@material-ui/core/Typography");
 
 module.exports = require("material-ui/styles/MuiThemeProvider");
 
-/***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//
-
-exports.default = function () {
-  return _react2.default.createElement(
-    "div",
-    null,
-    _react2.default.createElement(
-      "h1",
-      null,
-      "\u3054\u6CE8\u6587\u306F\u3046\u3055\u304E\u3067\u3059\u304B\uFF1F"
-    ),
-    _react2.default.createElement(
-      "p",
-      null,
-      "\u300E\u3054\u6CE8\u6587\u306F\u3046\u3055\u304E\u3067\u3059\u304B\uFF1F\u300F\uFF08\u3054\u3061\u3085\u3046\u3082\u3093\u306F\u3046\u3055\u304E\u3067\u3059\u304B\uFF1F\u3001\u82F1\u79F0\uFF1AIs the order a rabbit?\uFF09\u306F\u3001\u65E5\u672C\u306E\u6F2B\u753B\u5BB6\u3067\u3042\u308BKoi\u306B\u3088\u308B4\u30B3\u30DE\u6F2B\u753B\u4F5C\u54C1\u3002\u7565\u79F0\u306F\u300C\u3054\u3061\u3046\u3055\u300D\u3002\u300E\u307E\u3093\u304C\u30BF\u30A4\u30E0\u304D\u3089\u3089MAX\u300F\uFF08\u82B3\u6587\u793E\uFF09\u306B\u30662010\u5E7412\u6708\u53F7\u63B2\u8F09\u306E\u5F8C\u30012011\u5E743\u6708\u53F7\u3088\u308A\u9023\u8F09\u4E2D\u3002\u307E\u305F\u3001\u300E\u307E\u3093\u304C\u30BF\u30A4\u30E0\u304D\u3089\u3089\u30AD\u30E3\u30E9\u30C3\u30C8\u300F2012\u5E744\u6708\u53F7\u306B\u3066\u30B2\u30B9\u30C8\u63B2\u8F09\u3055\u308C\u305F\u307B\u304B\u3001\u300E\u30A2\u30CB\u30E1\u30C7\u30A3\u30A2\u300F\uFF08\u5B66\u7814\u30D1\u30D6\u30EA\u30C3\u30B7\u30F3\u30B0\uFF09\u306B\u30822014\u5E745\u6708\u53F7\u304B\u30897\u6708\u53F7\u307E\u3067\u63B2\u8F09\u3055\u308C\u305F[4]\u30022014\u5E74\u30012015\u5E74\u30682\u5EA6\u30C6\u30EC\u30D3\u30A2\u30CB\u30E1\u5316\u3055\u308C\u30012017\u5E74\u306B\u306F\u30B9\u30DA\u30B7\u30E3\u30EB\u30A2\u30CB\u30E1\u306E\u5287\u5834\u516C\u958B\u304C\u304A\u3053\u306A\u308F\u308C\u305F\u30022019\u5E74\u306B\u65B0\u4F5COVA\u306E\u767A\u58F2\u304C\u30012020\u5E74\u306B\u306F\u30C6\u30EC\u30D3\u30A2\u30CB\u30E1\u7B2C3\u671F\u306E\u653E\u9001\u304C\u305D\u308C\u305E\u308C\u6C7A\u5B9A\u3057\u3066\u3044\u308B[5]\u3002"
-    )
-  );
-};
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactStatic = __webpack_require__(1);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//
-
-exports.default = (0, _reactStatic.withSiteData)(function () {
-  return _react2.default.createElement(
-    "div",
-    null,
-    _react2.default.createElement(
-      "h1",
-      { style: { textAlign: "center" } },
-      "\u3046\u3047\u308B\u304B\u3080 \u304B\u3082\u301C\u3093"
-    ),
-    _react2.default.createElement("img", {
-      src: "http://livedoor.blogimg.jp/hot_heartlove/imgs/6/3/63153e1a.jpg",
-      alt: "",
-      style: { display: "block", margin: "0 auto" }
-    })
-  );
-});
-
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=static.33a45e21.js.map
+//# sourceMappingURL=static.3ed121b6.js.map
