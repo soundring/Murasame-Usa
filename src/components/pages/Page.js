@@ -1,5 +1,6 @@
 import React from "react";
 import MenuBar from "../MenuBar/MenuBar";
+import SpMenuBar from "../MenuBar/SpMenuBar";
 import Header from "../Header/Header";
 import Intro from "../Intro/Intro";
 import Product from "../Product/Product";
@@ -22,6 +23,7 @@ class Page extends React.Component {
       <BackGround>
         {/* ナビゲーションバー */}
         <MenuBar />
+        <SpMenuBar />
         {/* ヘッダー */}
         <a id="top" />
         <Header />

@@ -55,6 +55,8 @@ const IntroContents = styled("div")`
     margin: 0;
     margin-top: 10px;
     margin-bottom: 30px;
+    font-weight: 300;
+    font-size: 16px;
   }
 `;
 

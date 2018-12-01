@@ -20,6 +20,9 @@ const Bar = styled(AppBar)`
   && {
     position: fixed;
     background-color: rgba(206, 206, 206, 0.8);
+    @media only screen and (max-width: 750px) {
+      display: none;
+    }
   }
 `;
 
