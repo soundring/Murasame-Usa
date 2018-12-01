@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "homepage": "https://soundring.github.io/Murasame-Usa",
   "scripts": {
     "start": "react-static start",
     "stage": "react-static build --staging",
     "build": "react-static build",
+    "deploy": "react-static build && gh-pages -d dist",
     "serve": "serve dist -p 3000"
   },
   "dependencies": {
@@ -29,6 +31,7 @@
     "eslint-config-prettier": "^3.3.0",
     "eslint-config-react-tools": "1.x.x",
     "eslint-plugin-prettier": "^3.0.0",
+    "gh-pages": "^2.0.1",
     "prettier": "^1.15.2",
     "prettier-stylelint": "^0.4.2",
     "serve": "^6.1.0",

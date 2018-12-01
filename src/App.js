@@ -5,9 +5,6 @@ import { hot } from "react-hot-loader";
 //
 import Routes from "react-static-routes";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import Page from "./components/pages/Page";
-import About from "./containers/About";
-import Home from "./containers/Home";
 
 injectGlobal`
   body {

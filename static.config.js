@@ -46,13 +46,36 @@ export default {
       const { Html, Head, Body, children, renderMeta } = this.props;
 
       return (
-        <Html>
-          <Head charSet="ja">
+        <Html prefix="og: http://ogp.me/ns#">
+          <Head>
             <meta charSet="UTF-8" />
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1"
             />
+            <meta
+              name="description"
+              content="ムラサメのポートフォリオサイトです！"
+            />
+            <meta
+              property="og:title"
+              content="Murasame's Portfolio Site TopPage"
+            />
+            <meta property="og:type" content="website" />
+            <meta
+              property="og:description"
+              content="Twitterでムラサメの名前で活動している私のポートフォリオサイトです"
+            />
+            <meta
+              property="og:url"
+              content="https://fervent-spence-c49b3c.netlify.com/"
+            />
+            <meta property="og:site_name" content="Murasame's Portfolio Site" />
+            <meta
+              property="og:image"
+              content="https://user-images.githubusercontent.com/14822782/49325128-760d4400-f580-11e8-83a5-5240f61dda48.png"
+            />
+            <title>Murasame Usa's site</title>
             {renderMeta.styleTags}
           </Head>
           <Body>{children}</Body>
