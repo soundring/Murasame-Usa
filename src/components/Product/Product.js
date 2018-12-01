@@ -19,6 +19,7 @@ const ProductCard = styled(Card)`
     margin-top: 30px;
     justify-content: center;
     padding-bottom: 30px;
+    flex-wrap: wrap;
   }
 `;
 

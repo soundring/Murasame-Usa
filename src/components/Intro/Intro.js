@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 const IntroDiv = styled("div")`
   display: flex;
-  margin: 0 auto;
   justify-content: center;
 `;
 
@@ -18,17 +17,21 @@ const IntroTitle = styled(Typography)`
   }
 `;
 
-const IntroImage = styled("div")``;
+const IntroImage = styled("div")`
+  > img {
+    height: 700px;
+  }
+`;
 
 const IntroContents = styled("div")`
-  width: 650px;
+  max-width: 40%;
   height: 600px;
   background: white;
   opacity: 0.8;
   font-weight: 600;
   font-size: 18px;
   margin-top: 50px;
-  margin-left: 20px;
+  margin-left: 5%;
   padding: 10px;
   border-radius: 10px;
   overflow: auto;
@@ -44,11 +47,7 @@ class Intro extends React.Component {
         <IntroTitle>Introduction</IntroTitle>
         <IntroDiv>
           <IntroImage>
-            <img
-              src="./image/murasame.png"
-              height="700"
-              className="backgroundImage"
-            />
+            <img src="./image/murasame.png" className="backgroundImage" />
           </IntroImage>
           <IntroContents>
             <h3>私について</h3>
