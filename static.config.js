@@ -73,7 +73,7 @@ export default {
             <meta property="og:site_name" content="Murasame's Portfolio Site" />
             <meta
               property="og:image"
-              content="https://user-images.githubusercontent.com/14822782/49325128-760d4400-f580-11e8-83a5-5240f61dda48.png"
+              content="https://user-images.githubusercontent.com/14822782/49332592-19973c80-f5f3-11e8-8d38-926ea0a67f20.png"
             />
             <title>Murasame Usa's site</title>
             {renderMeta.styleTags}
