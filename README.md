@@ -2,6 +2,6 @@
 
 [サイトはこちら](https://fervent-spence-c49b3c.netlify.com/)
 
-*React
-*styled-components
-*Material-UI
+・React Static
+・styled-components
+・Material-UI
