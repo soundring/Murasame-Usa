@@ -5,6 +5,9 @@ import styled from "styled-components";
 const IntroDiv = styled("div")`
   display: flex;
   justify-content: center;
+  @media only screen and (max-width: 750px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const IntroTitle = styled(Typography)`
@@ -18,8 +21,20 @@ const IntroTitle = styled(Typography)`
 `;
 
 const IntroImage = styled("div")`
-  > img {
+  .pcBackgroundImage {
     height: 700px;
+  }
+  .spBackgroundImage {
+    display: none;
+  }
+  @media only screen and (max-width: 750px) {
+    .pcBackgroundImage {
+      display: none;
+    }
+    .spBackgroundImage {
+      display: block;
+      width: 120px;
+    }
   }
 `;
 
@@ -35,6 +50,12 @@ const IntroContents = styled("div")`
   padding: 10px;
   border-radius: 10px;
   overflow: auto;
+  @media only screen and (max-width: 750px) {
+    max-width: 300px;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
 `;
 
 class Intro extends React.Component {
@@ -47,7 +68,8 @@ class Intro extends React.Component {
         <IntroTitle>Introduction</IntroTitle>
         <IntroDiv>
           <IntroImage>
-            <img src="./image/murasame.png" className="backgroundImage" />
+            <img src="./image/murasame.png" className="pcBackgroundImage" />
+            <img src="./image/icon.png" className="spBackgroundImage" />
           </IntroImage>
           <IntroContents>
             <h3>私について</h3>

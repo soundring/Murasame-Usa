@@ -28,6 +28,9 @@ const TableDiv = styled(Paper)`
     width: 50%;
     margin: 0 auto;
     margin-top: 30px;
+    @media only screen and (max-width: 750px) {
+      min-width: 320px;
+    }
   }
 `;
 

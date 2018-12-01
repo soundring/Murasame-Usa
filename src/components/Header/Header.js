@@ -30,6 +30,9 @@ const HeaderCharacter = styled(Typography)`
     margin: 0;
     padding: 0;
     text-align: center;
+    @media only screen and (max-width: 750px) {
+      font-size: 36px;
+    }
   }
 `;
 
