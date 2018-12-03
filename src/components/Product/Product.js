@@ -69,7 +69,7 @@ class Product extends React.Component {
                   Kirara Website
                 </Typography>
                 <Typography component="p">
-                  私の好きな「まんがタイムきらら」での好きな作品の紹介サイトです。
+                  「まんがタイムきらら」の作品3つの紹介サイトです。ちなみに「ご注文はうさぎですか？」が様々な作品の中で一番好きです。HTML,CSS,jQuery。
                 </Typography>
               </CardContent>
             </CardActionArea>
@@ -96,7 +96,7 @@ class Product extends React.Component {
                   ドミネーターVR
                 </Typography>
                 <Typography component="p">
-                  Unityで作ったVRアプリで、#Dアバターの視点を合わせるとUIの表示と音声が流れます。アニメ「SYCHO-PASS
+                  Unityで作ったVRアプリで、3Dアバターの視点を合わせるとUIの表示と音声が流れます。アニメ「SYCHO-PASS
                   サイコパス」に憧れて作りました。
                 </Typography>
               </CardContent>
@@ -123,6 +123,31 @@ class Product extends React.Component {
                 </Typography>
                 <Typography component="p">
                   本を参考にして自分用に改造して作成したシングルページサイト。HTML,CSSのみ。
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </CardBorder>
+
+          {/* 4つ目 */}
+          <CardBorder
+            onClick={() =>
+              window.open("https://pomodoro-fresca.com/DEMO/index.html")
+            }
+          >
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                alt="イタリア料理のお店のウェブサイト"
+                height="140"
+                image="./image/pomodoro.png"
+                title="イタリア料理のお店のウェブサイト"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  イタリア料理のお店のウェブサイト
+                </Typography>
+                <Typography component="p">
+                  イタリア料理のお店のウェブサイトです。テンプレート使用。HTML,CSS,jQuery。
                 </Typography>
               </CardContent>
             </CardActionArea>
