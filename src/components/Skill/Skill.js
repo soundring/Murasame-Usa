@@ -1,17 +1,17 @@
-import React from "react";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import styled from "styled-components";
+import React from 'react'
+import Table from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
+import TableCell from '@material-ui/core/TableCell'
+import TableHead from '@material-ui/core/TableHead'
+import TableRow from '@material-ui/core/TableRow'
+import Paper from '@material-ui/core/Paper'
+import Typography from '@material-ui/core/Typography'
+import styled from 'styled-components'
 
-const SkillDiv = styled("div")`
+const SkillDiv = styled('div')`
   color: #fff;
   padding-bottom: 30px;
-`;
+`
 
 const SkillTitle = styled(Typography)`
   && {
@@ -21,7 +21,7 @@ const SkillTitle = styled(Typography)`
     text-align: center;
     padding-top: 30px;
   }
-`;
+`
 
 const TableDiv = styled(Paper)`
   && {
@@ -32,7 +32,7 @@ const TableDiv = styled(Paper)`
       min-width: 320px;
     }
   }
-`;
+`
 
 const FixTableCell = styled(TableCell)`
   && {
@@ -40,28 +40,28 @@ const FixTableCell = styled(TableCell)`
     text-align: center;
     font-size: 20px;
   }
-`;
+`
 
 class Skill extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
   }
-  render() {
-    let id = 0;
-    function createData(name, year) {
-      id += 1;
-      return { id, name, year };
+  render () {
+    let id = 0
+    function createData (name, year) {
+      id += 1
+      return { id, name, year }
     }
 
     const rows = [
-      createData("HTML5", 1),
-      createData("CSS3", 1),
-      createData("Javascript", 1),
-      createData("React", 0.2),
-      createData("React Static", 0.1),
-      createData("Ruby", 0.5),
-      createData("Rails", 0.5)
-    ];
+      createData('HTML5', 1),
+      createData('CSS3', 1),
+      createData('Javascript', 1),
+      createData('React', 0.5),
+      createData('React Static', 0.1),
+      createData('Ruby', 0.5),
+      createData('Rails', 0.5),
+    ]
 
     return (
       <SkillDiv>
@@ -75,22 +75,20 @@ class Skill extends React.Component {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map(row => {
-                return (
-                  <TableRow key={row.id}>
-                    <FixTableCell component="th" scope="row">
-                      {row.name}
-                    </FixTableCell>
-                    <FixTableCell numeric>{row.year}</FixTableCell>
-                  </TableRow>
-                );
-              })}
+              {rows.map(row => (
+                <TableRow key={row.id}>
+                  <FixTableCell component="th" scope="row">
+                    {row.name}
+                  </FixTableCell>
+                  <FixTableCell numeric>{row.year}</FixTableCell>
+                </TableRow>
+                ))}
             </TableBody>
           </Table>
         </TableDiv>
       </SkillDiv>
-    );
+    )
   }
 }
 
-export default Skill;
+export default Skill
