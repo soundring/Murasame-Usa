@@ -99,7 +99,12 @@ class Intro extends React.Component {
               ・リモートワークでバイト1:Node.jsを使ったAPI開発のお手伝い、CSVテストデータ作成しHTMLに書き出す作業
             </p>
             <p>・リモートワークでバイト2:Androidアプリの開発をお手伝い。Kotlin使用</p>
-            <p>・株式会社ディーゼロにてフロントエンドエンジニアとしてバイト。ReactでUI作成。</p>
+            <p>
+              ・株式会社ディーゼロにてフロントエンドエンジニアとしてバイト。React+TypeScriptでコンポーネント作成。
+            </p>
+            <p>
+              ・ユアドクにてフロントエンドエンジニアとしてバイト。React+TypeScriptでコンポーネント作成
+            </p>
           </IntroContents>
         </IntroDiv>
       </div>
