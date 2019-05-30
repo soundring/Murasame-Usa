@@ -54,8 +54,8 @@ class Skill extends React.Component {
     }
 
     const rows = [
-      createData('HTML5', 1),
-      createData('CSS3', 1),
+      createData('HTML5', 2),
+      createData('CSS3', 2),
       createData('Javascript', 1),
       createData('React', 0.5),
       createData('React Static', 0.1),
