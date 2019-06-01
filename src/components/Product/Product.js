@@ -1,15 +1,15 @@
-import React from "react";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Typography from "@material-ui/core/Typography";
-import styled from "styled-components";
+import React from 'react'
+import Card from '@material-ui/core/Card'
+import CardActionArea from '@material-ui/core/CardActionArea'
+import CardContent from '@material-ui/core/CardContent'
+import CardMedia from '@material-ui/core/CardMedia'
+import Typography from '@material-ui/core/Typography'
+import styled from 'styled-components'
 
-const ProductDiv = styled("div")`
+const ProductDiv = styled('div')`
   color: #fff;
   background-color: rgba(95, 95, 95, 1);
-`;
+`
 
 const ProductCard = styled(Card)`
   && {
@@ -21,7 +21,7 @@ const ProductCard = styled(Card)`
     padding-bottom: 30px;
     flex-wrap: wrap;
   }
-`;
+`
 
 const ProductTitle = styled(Typography)`
   && {
@@ -31,7 +31,7 @@ const ProductTitle = styled(Typography)`
     text-align: center;
     padding-top: 30px;
   }
-`;
+`
 
 const CardBorder = styled(Card)`
   && {
@@ -39,23 +39,19 @@ const CardBorder = styled(Card)`
     background-color: #c0c0c0;
     margin: auto;
   }
-`;
+`
 
 class Product extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
   }
-  render() {
+  render () {
     return (
       <ProductDiv>
         <ProductTitle>Product</ProductTitle>
         <ProductCard>
           {/* 1つ目 */}
-          <CardBorder
-            onClick={() =>
-              window.open("https://soundring.github.io/kirara_website/")
-            }
-          >
+          <CardBorder onClick={() => window.open('https://soundring.github.io/kirara_website/')}>
             <CardActionArea>
               <CardMedia
                 component="img"
@@ -77,9 +73,7 @@ class Product extends React.Component {
 
           <CardBorder
             onClick={() =>
-              window.open(
-                "https://twitter.com/murasame_usa/status/991747302862635008"
-              )
+              window.open('https://twitter.com/murasame_usa/status/991747302862635008')
             }
           >
             {/* 2つ目 */}
@@ -104,11 +98,7 @@ class Product extends React.Component {
           </CardBorder>
 
           {/* 3つ目 */}
-          <CardBorder
-            onClick={() =>
-              window.open("https://soundring.github.io/MyPortfolioSite/")
-            }
-          >
+          <CardBorder onClick={() => window.open('https://soundring.github.io/MyPortfolioSite/')}>
             <CardActionArea>
               <CardMedia
                 component="img"
@@ -129,11 +119,7 @@ class Product extends React.Component {
           </CardBorder>
 
           {/* 4つ目 */}
-          <CardBorder
-            onClick={() =>
-              window.open("https://pomodoro-fresca.com/DEMO/index.html")
-            }
-          >
+          <CardBorder onClick={() => window.open('https://pomodoro-fresca.com/DEMO/index.html')}>
             <CardActionArea>
               <CardMedia
                 component="img"
@@ -152,10 +138,30 @@ class Product extends React.Component {
               </CardContent>
             </CardActionArea>
           </CardBorder>
+          {/* 5つ目 */}
+          <CardBorder onClick={() => window.open('https://codepen.io/soundring/pen/wbjgQM')}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                alt="ConoHaのコンパネ"
+                height="140"
+                image="./image/conoha.png"
+                title="ConoHaの簡易的なコンパネのフロント部分"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  ConoHaの簡易的なコンパネのフロント部分
+                </Typography>
+                <Typography component="p">
+                  ConoHaの簡易的なコンパネのフロント部分です。HTML,CSS,jQuery。
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </CardBorder>
         </ProductCard>
       </ProductDiv>
-    );
+    )
   }
 }
 
-export default Product;
+export default Product
