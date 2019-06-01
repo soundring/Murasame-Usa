@@ -56,9 +56,9 @@ class Skill extends React.Component {
     const rows = [
       createData('HTML5', 2),
       createData('CSS3', 2),
-      createData('Javascript', 1),
+      createData('Javascript', 1.5),
       createData('React', 0.5),
-      createData('React Static', 0.1),
+      createData('React Static', 0.3),
       createData('Ruby', 0.5),
       createData('Rails', 0.5),
     ]
@@ -82,7 +82,7 @@ class Skill extends React.Component {
                   </FixTableCell>
                   <FixTableCell numeric>{row.year}</FixTableCell>
                 </TableRow>
-                ))}
+              ))}
             </TableBody>
           </Table>
         </TableDiv>
