@@ -119,26 +119,6 @@ class Product extends React.Component {
           </CardBorder>
 
           {/* 4つ目 */}
-          <CardBorder onClick={() => window.open('https://pomodoro-fresca.com/DEMO/index.html')}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                alt="イタリア料理のお店のウェブサイト"
-                height="140"
-                image="./image/pomodoro.png"
-                title="イタリア料理のお店のウェブサイト"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  イタリア料理のお店のウェブサイト
-                </Typography>
-                <Typography component="p">
-                  イタリア料理のお店のウェブサイトです。テンプレート使用。HTML,CSS,jQuery。
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </CardBorder>
-          {/* 5つ目 */}
           <CardBorder onClick={() => window.open('https://codepen.io/soundring/pen/wbjgQM')}>
             <CardActionArea>
               <CardMedia
