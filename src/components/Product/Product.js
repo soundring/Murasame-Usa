@@ -51,21 +51,21 @@ class Product extends React.Component {
         <ProductTitle>Product</ProductTitle>
         <ProductCard>
           {/* 1つ目 */}
-          <CardBorder onClick={() => window.open('https://soundring.github.io/kirara_website/')}>
+          <CardBorder onClick={() => window.open('https://github.com/soundring/conoha-bot')}>
             <CardActionArea>
               <CardMedia
                 component="img"
-                alt="Kirara Website"
+                alt="LINE Bot"
                 height="140"
-                image="./image/kirara_website.png"
-                title="Kirara Website"
+                image="./image/chatbot.png"
+                title="LINE Bot"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
-                  Kirara Website
+                  LINE Bot
                 </Typography>
                 <Typography component="p">
-                  「まんがタイムきらら」の作品3つの紹介サイトです。ちなみに「ご注文はうさぎですか？」が様々な作品の中で一番好きです。HTML,CSS,jQuery。
+                  このはちゃんを用いたチャットボットです。
                 </Typography>
               </CardContent>
             </CardActionArea>

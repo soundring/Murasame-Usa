@@ -56,11 +56,12 @@ class Skill extends React.Component {
     const rows = [
       createData('HTML5', 2),
       createData('CSS3', 2),
-      createData('Javascript', 1.5),
-      createData('React', 0.5),
-      createData('React Static', 0.3),
-      createData('Ruby', 0.5),
-      createData('Rails', 0.5),
+      createData('Javascript', 1.7),
+      createData('React', 0.6),
+      createData('React Static', 0.5),
+      createData('Ruby', 0.8),
+      createData('Rails', 0.8),
+      createData('Vue', 0.2),
     ]
 
     return (
