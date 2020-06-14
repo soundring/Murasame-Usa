@@ -70,11 +70,8 @@ class Product extends React.Component {
                 </Typography>
                 <Typography component="p">
                   sqliteを使用しているためデータは永続化します。
-                  <link>
-                    <a href="https://twitter.com/murasame_usa/status/1253490547093696512?s=20">
-                      デモ動画
-                    </a>
-                  </link>
+                  以下、デモ動画へのリンク
+                  https://twitter.com/murasame_usa/status/1253490547093696512?s=20
                 </Typography>
               </CardContent>
             </CardActionArea>

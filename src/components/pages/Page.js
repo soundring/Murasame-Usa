@@ -1,16 +1,16 @@
-import React from "react";
-import MenuBar from "../MenuBar/MenuBar";
-import SpMenuBar from "../MenuBar/SpMenuBar";
-import Header from "../Header/Header";
-import Intro from "../Intro/Intro";
-import Product from "../Product/Product";
-import Skill from "../Skill/Skill";
-import Contact from "../Contact/Contact";
-import Footer from "../Footer/Footer";
+import React from 'react';
+import MenuBar from '../MenuBar/MenuBar';
+import SpMenuBar from '../MenuBar/SpMenuBar';
+import Header from '../Header/Header';
+import Intro from '../Intro/Intro';
+import Product from '../Product/Product';
+import Skill from '../Skill/Skill';
+import Contact from '../Contact/Contact';
+import Footer from '../Footer/Footer';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const BackGround = styled("div")`
+const BackGround = styled('div')`
   background-color: rgba(45, 45, 45, 1);
 `;
 
