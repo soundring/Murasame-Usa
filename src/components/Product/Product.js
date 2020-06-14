@@ -1,15 +1,15 @@
-import React from 'react'
-import Card from '@material-ui/core/Card'
-import CardActionArea from '@material-ui/core/CardActionArea'
-import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
-import Typography from '@material-ui/core/Typography'
-import styled from 'styled-components'
+import React from 'react';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+import styled from 'styled-components';
 
 const ProductDiv = styled('div')`
   color: #fff;
   background-color: rgba(95, 95, 95, 1);
-`
+`;
 
 const ProductCard = styled(Card)`
   && {
@@ -21,7 +21,7 @@ const ProductCard = styled(Card)`
     padding-bottom: 30px;
     flex-wrap: wrap;
   }
-`
+`;
 
 const ProductTitle = styled(Typography)`
   && {
@@ -31,7 +31,7 @@ const ProductTitle = styled(Typography)`
     text-align: center;
     padding-top: 30px;
   }
-`
+`;
 
 const CardBorder = styled(Card)`
   && {
@@ -39,87 +39,105 @@ const CardBorder = styled(Card)`
     background-color: #c0c0c0;
     margin: auto;
   }
-`
+`;
 
 class Product extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
   }
-  render () {
+  render() {
     return (
       <ProductDiv>
         <ProductTitle>Product</ProductTitle>
         <ProductCard>
           {/* 1つ目 */}
-          <CardBorder onClick={() => window.open('https://github.com/soundring/conoha-bot')}>
+          <CardBorder
+            onClick={() =>
+              window.open('https://github.com/soundring/flutter_todo_list')
+            }
+          >
             <CardActionArea>
               <CardMedia
                 component="img"
-                alt="LINE Bot"
+                alt="Flutter Todo List"
                 height="140"
-                image="./image/chatbot.png"
-                title="LINE Bot"
+                image="./image/flutter_todo.png"
+                title="Flutter Todo List"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
-                  LINE Bot
+                  Flutterで作ったTodoリスト
                 </Typography>
                 <Typography component="p">
-                  このはちゃんを用いたチャットボットです。
+                  sqliteを使用しているためデータは永続化します。
+                  <link>
+                    <a href="https://twitter.com/murasame_usa/status/1253490547093696512?s=20">
+                      デモ動画
+                    </a>
+                  </link>
                 </Typography>
               </CardContent>
             </CardActionArea>
           </CardBorder>
 
+          {/* 2つ目 */}
           <CardBorder
             onClick={() =>
-              window.open('https://twitter.com/murasame_usa/status/991747302862635008')
+              window.open(
+                'https://twitter.com/murasame_usa/status/1206191749170790403?s=20'
+              )
             }
           >
-            {/* 2つ目 */}
             <CardActionArea>
               <CardMedia
                 component="img"
-                alt="ドミネーター"
+                alt="Flutterで画面作成"
                 height="140"
-                image="./image/dominator_vr.png"
-                title="Kirara Website"
+                image="./image/gochiusa_flutter.png"
+                title="Flutterで画面作成"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
-                  ドミネーターVR
+                  Flutterで画面作成
                 </Typography>
                 <Typography component="p">
-                  Unityで作ったVRアプリで、3Dアバターの視点を合わせるとUIの表示と音声が流れます。アニメ「SYCHO-PASS
-                  サイコパス」に憧れて作りました。
+                  「ご注文はうさぎですか？」に出てくる「ラビットハウス」を地図アプリ調べて開いた時を想定
                 </Typography>
               </CardContent>
             </CardActionArea>
           </CardBorder>
 
           {/* 3つ目 */}
-          <CardBorder onClick={() => window.open('https://soundring.github.io/MyPortfolioSite/')}>
+          <CardBorder
+            onClick={() =>
+              window.open('https://github.com/soundring/search_recent_book_bot')
+            }
+          >
             <CardActionArea>
               <CardMedia
                 component="img"
-                alt="ポートフォリオサイト"
+                alt="最新の書籍を出すLINE Bot"
                 height="140"
-                image="./image/portfolio_withbook.png"
-                title="ポートフォリオサイト"
+                image="./image/LINEBot.png"
+                title="最新の書籍を出すLINE Bot"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
-                  本を参考に作成したポートフォリオサイト
+                  LINE Botを作成
                 </Typography>
                 <Typography component="p">
-                  本を参考にして自分用に改造して作成したシングルページサイト。HTML,CSSのみ。
+                  書籍名を入力すると、その書籍の最新巻の情報を返してくれる。
                 </Typography>
               </CardContent>
             </CardActionArea>
           </CardBorder>
 
           {/* 4つ目 */}
-          <CardBorder onClick={() => window.open('https://codepen.io/soundring/pen/wbjgQM')}>
+          <CardBorder
+            onClick={() =>
+              window.open('https://codepen.io/soundring/pen/wbjgQM')
+            }
+          >
             <CardActionArea>
               <CardMedia
                 component="img"
@@ -140,8 +158,8 @@ class Product extends React.Component {
           </CardBorder>
         </ProductCard>
       </ProductDiv>
-    )
+    );
   }
 }
 
-export default Product
+export default Product;

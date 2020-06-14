@@ -1,17 +1,17 @@
-import React from 'react'
-import Table from '@material-ui/core/Table'
-import TableBody from '@material-ui/core/TableBody'
-import TableCell from '@material-ui/core/TableCell'
-import TableHead from '@material-ui/core/TableHead'
-import TableRow from '@material-ui/core/TableRow'
-import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography'
-import styled from 'styled-components'
+import React from 'react';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import styled from 'styled-components';
 
 const SkillDiv = styled('div')`
   color: #fff;
   padding-bottom: 30px;
-`
+`;
 
 const SkillTitle = styled(Typography)`
   && {
@@ -21,7 +21,7 @@ const SkillTitle = styled(Typography)`
     text-align: center;
     padding-top: 30px;
   }
-`
+`;
 
 const TableDiv = styled(Paper)`
   && {
@@ -32,7 +32,7 @@ const TableDiv = styled(Paper)`
       min-width: 320px;
     }
   }
-`
+`;
 
 const FixTableCell = styled(TableCell)`
   && {
@@ -40,29 +40,28 @@ const FixTableCell = styled(TableCell)`
     text-align: center;
     font-size: 20px;
   }
-`
+`;
 
 class Skill extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
   }
-  render () {
-    let id = 0
-    function createData (name, year) {
-      id += 1
-      return { id, name, year }
+  render() {
+    let id = 0;
+    function createData(name, year) {
+      id += 1;
+      return { id, name, year };
     }
 
     const rows = [
       createData('HTML5', 2),
       createData('CSS3', 2),
-      createData('Javascript', 1.7),
-      createData('React', 0.6),
-      createData('React Static', 0.5),
-      createData('Ruby', 0.8),
-      createData('Rails', 0.8),
-      createData('Vue', 0.2),
-    ]
+      createData('Javascript', 2),
+      createData('React', 0.5),
+      createData('Ruby', 1),
+      createData('Rails', 1),
+      createData('Flutter', 0.5)
+    ];
 
     return (
       <SkillDiv>
@@ -88,8 +87,8 @@ class Skill extends React.Component {
           </Table>
         </TableDiv>
       </SkillDiv>
-    )
+    );
   }
 }
 
-export default Skill
+export default Skill;
