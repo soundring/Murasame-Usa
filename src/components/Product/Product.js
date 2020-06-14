@@ -48,7 +48,9 @@ class Product extends React.Component {
   render() {
     return (
       <ProductDiv>
-        <ProductTitle>Product</ProductTitle>
+        <ProductTitle>
+          Product　それぞれクリックするとgithubかTwitterに飛びます（スタイル崩れてるのは気にしない）
+        </ProductTitle>
         <ProductCard>
           {/* 1つ目 */}
           <CardBorder
